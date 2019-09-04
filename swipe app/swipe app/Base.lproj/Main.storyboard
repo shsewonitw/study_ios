@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gga-e9-IC0">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--imageViewer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="imageViewer" id="BYZ-38-t0r" customClass="ViewController" customModule="swipe_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BOj-OW-dr3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hIL-GJ-5uI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="645"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-J7-ToB">
+                                        <rect key="frame" x="0.0" y="645" width="414" height="129"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSJ-zq-Kfl">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="129"/>
+                                                <state key="normal" title="이전"/>
+                                                <connections>
+                                                    <action selector="onClickBefore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wcp-o5-um3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkR-6b-2Ac">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="129"/>
+                                                <state key="normal" title="다음"/>
+                                                <connections>
+                                                    <action selector="onClickAfter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P9Q-BW-gr5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rSJ-zq-Kfl" firstAttribute="width" secondItem="tkR-6b-2Ac" secondAttribute="width" id="nV4-ih-Td6"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hIL-GJ-5uI" firstAttribute="height" secondItem="Xkg-J7-ToB" secondAttribute="height" multiplier="5" id="APH-po-X2h"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BOj-OW-dr3" secondAttribute="trailing" id="ALM-bn-4Ef"/>
+                            <constraint firstItem="BOj-OW-dr3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LOT-Pp-mcn"/>
+                            <constraint firstItem="BOj-OW-dr3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RsI-2K-AfU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BOj-OW-dr3" secondAttribute="bottom" id="eeM-oq-ij9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="MSQ-Ly-r3b" appends="YES" id="pgc-37-88v"/>
+                            <outletCollection property="gestureRecognizers" destination="sZR-42-d8L" appends="YES" id="Nig-bY-cHf"/>
+                            <outletCollection property="gestureRecognizers" destination="Jde-vn-nPd" appends="YES" id="4LC-TN-k5v"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="imageViewer" id="D0G-7o-xYx"/>
+                    <connections>
+                        <outlet property="btnAfter" destination="tkR-6b-2Ac" id="Y9R-p5-Q30"/>
+                        <outlet property="btnBefore" destination="rSJ-zq-Kfl" id="IGe-Hj-OOp"/>
+                        <outlet property="imageView" destination="hIL-GJ-5uI" id="QdD-Sc-mYs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="MSQ-Ly-r3b">
+                    <connections>
+                        <action selector="onSwipeActions:" destination="BYZ-38-t0r" id="t2Q-t7-xQ8"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="sZR-42-d8L">
+                    <connections>
+                        <action selector="onSwipeActions:" destination="BYZ-38-t0r" id="XCr-4P-66S"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Jde-vn-nPd">
+                    <connections>
+                        <action selector="onTapAction:" destination="BYZ-38-t0r" id="xPW-hr-spz"/>
+                        <segue destination="vl0-pW-BhV" kind="show" id="SQu-rf-4eY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="18.75"/>
+        </scene>
+        <!--detailViewer-->
+        <scene sceneID="9UI-1z-MCN">
+            <objects>
+                <viewController title="detailViewer" id="vl0-pW-BhV" customClass="DetailViewController" customModule="swipe_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t4u-Mb-NRN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIG-Gl-VQC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OIG-Gl-VQC" secondAttribute="bottom" id="KT3-yW-sEh"/>
+                            <constraint firstAttribute="trailing" secondItem="OIG-Gl-VQC" secondAttribute="trailing" id="RhY-ap-bFY"/>
+                            <constraint firstItem="OIG-Gl-VQC" firstAttribute="top" secondItem="t4u-Mb-NRN" secondAttribute="top" id="qMu-QG-gBg"/>
+                            <constraint firstItem="OIG-Gl-VQC" firstAttribute="leading" secondItem="t4u-Mb-NRN" secondAttribute="leading" id="w8g-e1-gSN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fXR-VF-PP9"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="88f-iu-g8G" appends="YES" id="PJC-34-ngj"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="DetailImageView" destination="OIG-Gl-VQC" id="Ixn-up-1E3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rxf-U4-NvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="88f-iu-g8G">
+                    <connections>
+                        <action selector="onTapAction:" destination="vl0-pW-BhV" id="oWQ-nI-tWJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1601.449275362319" y="19.419642857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fah-Vf-Vwm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gga-e9-IC0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VBU-Q8-8fD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WwX-7D-a1c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8a4-1Y-xf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.68115942028987" y="-654.24107142857144"/>
+        </scene>
+    </scenes>
+</document>
